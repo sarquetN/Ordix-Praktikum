@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casear Chiffre</title>
+    <title>Document</title>
 
-    <link href="Page.css" rel="stylesheet" />
+    <script src="test.js"></script>    
     <script src="script.js"></script>
-
+    <link href="Page.css" rel="stylesheet" />
+    
 </head>
-
-
 
 <body>
 
@@ -19,21 +18,25 @@
 <h2>Von Lucija Filipović</h2>
 <hr>
 
-<p class="p1">Geheimtext Generator:</p>
 
-    <div class="konverter1">
-        <input type="text" />
-        <button class="button 1">Konvertieren</button>
-    </div>
 
-<br><br><br>
+<form id="programm">
+<p class="p1">What do you want to encrypt?</p>
 
-<p class="p2">Konvertieren Sie den Text zurück:</p>
+            <input type="text" placeholder="Type here" class="input1"/>
+            <input type="submit" onclick="encript(event)" value="Encode" class="btn1"/>
 
-    <div class="konverter2">
-        <input type="text" />
-        <button class="button 2">Konvertieren</button>
-    </div>
+            <div class="text1"></div>
+
+
+<br><br><br><p class="p2">And now back:</p>
+
+            <input type="text" placeholder="Type here" class="input2"/>
+            <input type="submit" value="Decode" class="btn2" />
+
+            <div class="encrypt"></div>
+
+</form>
 
     
 </body>
