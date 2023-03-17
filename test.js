@@ -1,25 +1,65 @@
-var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var caesarCipher = ["e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d"]
-var resultString = [];
 
-console.log(alphabet.length)
-
-function encript(event){
+function encript(event) {
     event.preventDefault();
 
-    let word = document.querySelector(".input1").value
-    console.log(word)
+    let word = document.querySelector(".input1").value;
+
+    if(word){
+
+        let result = "";
+
+        for (let i = 0; i < word.length; i++){
+            let char = word[i];
+            
+            if(char.match(/[a-z]/)){
+                let code = char.charCodeAt(0);
+                code = (code - 97 + 4) % 26 + 97;
+                char = String.fromCharCode(code);
+                
+            }if(char.match(/[A-Z]/)){
+                let code = char.charCodeAt(0);
+                code = (code - 65 + 4) % 26 + 65;
+                char = String.fromCharCode(code);                
+            }
 
 
+            result += char;
+        
+        } console.log(result);
+
+        
+    }
+
+};
+
+function decript(event) {
+    event.preventDefault();
+
+    let word = document.querySelector(".input2").value;
+    //console.log(word);
+
+    if(word){
+
+        let result = "";
+
+        for (let i = 0; i < word.length; i++){
+            let char = word[i];
+            
+            if(char.match(/[a-z]/)){
+                let code = char.charCodeAt(0);
+                code = (code - 97 - 4 +26) % 26 + 97;
+                char = String.fromCharCode(code);
+                
+            }if(char.match(/[A-Z]/)){
+                let code = char.charCodeAt(0);
+                code = (code - 65 - 4 +26) % 26 + 65;
+                char = String.fromCharCode(code);                
+            }
 
 
+            result += char;
+        
+        }; console.log(result);        
+    };
 
-}
-
-
-
-
-
-const uppercase = () => [alphabet(26)].map((n,i) => `${String.fromCharCode(i + "A".charCodeAt())}`);
-const lowercase = () => [alphabet(26)]
-
+};
