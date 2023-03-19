@@ -25,28 +25,31 @@ h2{
 
 .btn{
   border-radius: 15%;  
-  padding: 1%
+  padding: 8px;
+  border: 1px solid gray;
 }
 
 
 .input1{
-    text-align: left;
     padding: 50px 15%;
+    text-align: center;
 }
 
 .input2{
     padding: 50px 15%;
-    text-align: left;
+    text-align: center;
 }
 
 .output1{
     background-color: aliceblue;
     padding: 50px;
     margin: 10px 17%;  
+    border: 1px solid black;
 }
 
 .output2{
     background-color: aliceblue;
     padding: 50px;
     margin: 10px 17%;
+    border: 1px solid black;
 }

@@ -1,0 +1,63 @@
+Hier wird der Process erklät.
+
+
+Schritt 1: HTML erstellen.
+
+Der erste Schritt besteht darin, sich immer Gedanken darüber zu machen, wie die Seite aussehen soll,
+um dem Programm am besten zu dienen. Für die Caesar-Chiffre werden grundsätzlich 2 Felder benötigt,
+eines für die Eingabe und eines für die Ausgabe. Der vorgestellte Code hat insgesamt 4 Felder, da es
+eine Ver- und Entschlüsselungsfunktion gibt. Aber abgesehen davon ist es schön, einen Titel, eine Anleitung
+und einen Link zum Git-Repository-Code zu haben. 
+
+
+
+
+
+Schritt 2: Sich den Code überlegen, und mit JS schreiben
+
+Überlegen Sie, was das Programm Schritt für Schritt tun sollte. Wie können Sie diese Teile so einfach
+und dennoch so hochwertig wie möglich schreiben? In diesem Fall gibt es eine Schaltfläche auf der HTML-Seite,
+die eine onClick aufgabe hat, um die "cipher" Funktion in der Datei test.js zu aktivieren. 
+Wenn diese Funktion aktiviert ist, liest sie den folgenden Code:
+
+    function cipher(event) {
+        event.preventDefault();
+
+        let word = document.querySelector(".input1").value;          
+        if(word){                                                          
+            let result = "";                                                
+            for (let i = 0; i < word.length; i++){                           
+                let char = word[i];
+                if(char.match(/[a-z]/)){
+                    let code = char.charCodeAt(0);
+                    code = (code - 97 + 4) % 26 + 97;
+                    char = String.fromCharCode(code);
+                }if(char.match(/[A-Z]/)){
+                    let code = char.charCodeAt(0);
+                    code = (code - 65 + 4) % 26 + 65;
+                    char = String.fromCharCode(code);                
+                }
+                result += char;
+            }        
+            document.querySelector(".output1").textContent = result;
+        }
+
+    };
+
+
+
+Dieser Code nimmt den geschriebenen Text und kodiert ihn wie folgt: 
+
+Wenn der angegebene Buchstabe 'a' ist, wird er als die Zahl 97 betrachtet, wie sie in der ASCII-Tabelle erscheint
+(https://www.asciitable.com/?utm_content=cmp-true). Der Code fügt 4 weitere Zahlen hinzu, was 101 ergibt, und 
+aus der Tabelle gelesen ist es der Buchstabe 'e'. Dies geschieht für alle Buchstaben, ob Groß- oder Kleinbuchstaben. 
+Zahlen und Interpunktionszeichen werden ignoriert und nicht verändert.
+
+Um einen Text zu entziffern, wird dasselbe für die decipher-Funktion getan, aber statt 4 zu addieren, wird 4 subtrahiert.
+
+
+
+Schritt 3: Alles schön machen
+
+Wenn es die Zeit erlaubt, muss nur noch alles für den Benutzer hübsch gestaltet werden.
+Mit einfachem CSS-Code wird dies möglich sein.

@@ -1,5 +1,5 @@
 
-function encript(event) {
+function cipher(event) {
     event.preventDefault();
 
     let word = document.querySelector(".input1").value;
@@ -31,7 +31,7 @@ function encript(event) {
 
 };
 
-function decript(event) {
+function decipher(event) {
     event.preventDefault();
 
     let word = document.querySelector(".input2").value;
