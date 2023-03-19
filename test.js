@@ -25,9 +25,8 @@ function encript(event) {
 
             result += char;
         
-        } console.log(result);
-
-        
+        }        
+        document.querySelector(".output1").textContent = result;
     }
 
 };
@@ -59,7 +58,10 @@ function decript(event) {
 
             result += char;
         
-        }; console.log(result);        
+        }; 
+        
+        document.querySelector(".output2").textContent = result;
+
     };
 
 };
